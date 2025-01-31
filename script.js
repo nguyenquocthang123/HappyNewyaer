@@ -165,5 +165,5 @@ function handleMusic() {
     });
   });
 }
-
+handleClickLixi();
 handleMusic();
