@@ -141,20 +141,29 @@ function handleClickLixi() {
 }
 
 function handleMusic() {
-  // Thêm vào cuối file
-  const musicBtn = document.querySelector('.music-toggle');
   const audio = document.getElementById('bgMusic');
+  
+  // Mặc định âm thanh ở chế độ muted (tắt âm thanh)
+  audio.muted = true;
 
-  musicBtn.addEventListener('click', () => {
-    if (audio.paused) {
-      audio.play();
-      musicBtn.textContent = '🔊';
-    } else {
-      audio.pause();
-      musicBtn.textContent = '🔈';
-    }
+  window.addEventListener('load', () => {
+    // Phát âm thanh ở chế độ muted khi trang tải
+    audio.play().then(() => {
+      console.log('Âm thanh đã được phát nhưng ở chế độ tắt âm thanh');
+    }).catch((error) => {
+      console.log('Không thể phát nhạc:', error);
+    });
+  });
+
+  // Sau khi người dùng tương tác, bỏ chế độ muted
+  document.body.addEventListener('click', () => {
+    audio.muted = false;  // Tắt chế độ muted
+    audio.play().then(() => {
+      console.log('Âm thanh đã phát với âm thanh');
+    }).catch((error) => {
+      console.log('Không thể phát nhạc:', error);
+    });
   });
 }
 
-handleClickLixi();
 handleMusic();
