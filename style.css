@@ -1,0 +1,270 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+body {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.container {
+  background-image: url(./assets/img/background.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+.banh-chung {
+  position: absolute;
+  width: min(20rem, 40%);
+  height: auto;
+  aspect-ratio: 1/1;
+  top: 55%;
+  left: 20%;
+}
+
+.banh-chung img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.cay-dao {
+  position: relative;
+  width: min(45rem, 60%);
+  left: 36%;
+}
+
+.cay-dao img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.lixi-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.lixi {
+  position: absolute;
+  width: 4rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.lixi img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+  border: 2px solid #ff1744;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.lixi:hover {
+  transform: scale(1.1);
+}
+
+.card {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  display: none;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 1000;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.message {
+  font-size: 1.4rem;
+  line-height: 1.5;
+  color: #333;
+  text-align: center;
+}
+
+.image {
+  width: min(150px, 80%);
+  height: auto;
+  aspect-ratio: 1/1;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+.caudoi-wrapper {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    background-image: url(./assets/img/background-2.jpg);
+  }
+
+  .card {
+    width: 40%;
+  }
+
+  .banh-chung {
+    width: 30%;
+    top: 70%;
+    left: 10%;
+  }
+
+  .cay-dao {
+    width: 70%;
+    left: 30%;
+  }
+
+  .lixi {
+    width: 4rem;
+  }
+
+  .caudoi-wrapper {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .caudoi-wrapper .caudoi-item-1,
+  .caudoi-wrapper .caudoi-item-2 {
+    position: absolute;
+    width: 25%;
+    height: auto;
+  }
+
+  .caudoi-wrapper .caudoi-item-1 {
+    top: 35%;
+    left: 0%;
+  }
+
+  .caudoi-wrapper .caudoi-item-2 {
+    top: 35%;
+    right: 0%;
+  }
+
+  .caudoi-wrapper .caudoi-item-1 img,
+  .caudoi-wrapper .caudoi-item-2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    background-image: url(./assets/img/background-2.jpg);
+  }
+
+  .card {
+    width: 40%;
+  }
+
+  .caudoi-wrapper {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .caudoi-wrapper .caudoi-item-1,
+  .caudoi-wrapper .caudoi-item-2 {
+    position: absolute;
+    width: 25%;
+    height: auto;
+  }
+
+  .caudoi-wrapper .caudoi-item-1 {
+    top: 35%;
+    left: 0%;
+  }
+
+  .caudoi-wrapper .caudoi-item-2 {
+    top: 35%;
+    right: 0%;
+  }
+
+  .caudoi-wrapper .caudoi-item-1 img,
+  .caudoi-wrapper .caudoi-item-2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .banh-chung {
+    width: 25%;
+    top: 75%;
+    left: 5%;
+  }
+
+  .cay-dao {
+    width: 80%;
+    left: 20%;
+  }
+
+  .lixi {
+    width: 2.5rem;
+  }
+
+  .card {
+    width: 90%;
+    max-width: 300px;
+  }
+}
+
+.music-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 70px;
+  padding: 15px;
+  font-size: 30px;
+  background: rgba(0, 0, 0, 0.3);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s;
+  z-index: 1000;
+}
+
+.music-toggle:hover {
+  transform: scale(1.1);
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.tiktok-logo {
+  position: fixed;
+  bottom: 15px;
+  left: 15px;
+  z-index: 1000;
+}
+
+.tiktok-logo img {
+  width: 35px;
+  height: auto;
+}
